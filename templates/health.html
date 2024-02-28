@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Condition</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <h1>Health Condition</h1>
+    <form action="/health" method="get">
+        <label for="degree">Enter Degree:</label>
+        <input type="number" id="degree" name="degree" required>
+        <button type="submit">Check</button>
+    </form>
+    {% if condition %}
+    <p>Your health condition is: {{ condition }}</p>
+    {% endif %}
+</body>
+</html>
